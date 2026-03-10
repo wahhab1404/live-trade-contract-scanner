@@ -63,3 +63,29 @@ python dashboard.py --input sample_data.json --timeframe 1h --host 127.0.0.1 --p
 
 ### 4) تأكد أن الملف موجود
 يجب أن يكون `sample_data.json` موجودًا في نفس المجلد أو استخدم مساره الكامل.
+
+
+## حل مشكلة `python: can't open file ... dashboard.py`
+هذا يعني أنك لست داخل نسخة المشروع الصحيحة أو النسخة قديمة/ناقصة.
+
+1) تأكد من الملفات داخل المجلد (Windows):
+```bat
+dir
+```
+لازم تشوف `dashboard.py` و `bot.py` و `sample_data.json`.
+
+2) افحص النسخة بسرعة:
+```bash
+python verify_install.py
+```
+
+3) إذا الملف غير موجود، حدّث النسخة:
+```bat
+git pull
+git checkout main
+```
+
+4) ثم شغّل المنصة:
+```bat
+python dashboard.py --input sample_data.json --timeframe 1h --host 127.0.0.1 --port 8080
+```
