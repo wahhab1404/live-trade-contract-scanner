@@ -1,0 +1,43 @@
+{
+  "underlying_context": {
+    "symbol": "META",
+    "stock_buy_volume": 50000,
+    "stock_sell_volume": 32000
+  },
+  "contracts": [
+    {
+      "symbol": "META",
+      "strike": 510,
+      "option_type": "CALL",
+      "candles": [
+        {"ts": "2026-03-01T10:00:00", "open": 0.52, "high": 0.56, "low": 0.49, "close": 0.51, "volume": 320},
+        {"ts": "2026-03-01T11:00:00", "open": 0.51, "high": 0.55, "low": 0.48, "close": 0.50, "volume": 290},
+        {"ts": "2026-03-01T12:00:00", "open": 0.50, "high": 0.53, "low": 0.47, "close": 0.49, "volume": 280},
+        {"ts": "2026-03-01T13:00:00", "open": 0.49, "high": 0.52, "low": 0.46, "close": 0.48, "volume": 300},
+        {"ts": "2026-03-01T14:00:00", "open": 0.48, "high": 0.51, "low": 0.44, "close": 0.47, "volume": 350},
+        {"ts": "2026-03-01T15:00:00", "open": 0.47, "high": 0.50, "low": 0.43, "close": 0.46, "volume": 400},
+        {"ts": "2026-03-01T16:00:00", "open": 0.46, "high": 0.60, "low": 0.40, "close": 0.45, "volume": 2100},
+        {"ts": "2026-03-01T17:00:00", "open": 0.45, "high": 0.48, "low": 0.39, "close": 0.44, "volume": 900},
+        {"ts": "2026-03-01T18:00:00", "open": 0.44, "high": 0.50, "low": 0.41, "close": 0.49, "volume": 1000},
+        {"ts": "2026-03-01T19:00:00", "open": 0.49, "high": 0.58, "low": 0.48, "close": 0.56, "volume": 1300}
+      ]
+    },
+    {
+      "symbol": "META",
+      "strike": 500,
+      "option_type": "PUT",
+      "candles": [
+        {"ts": "2026-03-01T10:00:00", "open": 0.80, "high": 0.85, "low": 0.74, "close": 0.79, "volume": 500},
+        {"ts": "2026-03-01T11:00:00", "open": 0.79, "high": 0.83, "low": 0.72, "close": 0.76, "volume": 650},
+        {"ts": "2026-03-01T12:00:00", "open": 0.76, "high": 0.80, "low": 0.70, "close": 0.74, "volume": 3300},
+        {"ts": "2026-03-01T13:00:00", "open": 0.74, "high": 0.77, "low": 0.68, "close": 0.73, "volume": 2800},
+        {"ts": "2026-03-01T14:00:00", "open": 0.73, "high": 0.75, "low": 0.66, "close": 0.69, "volume": 3100},
+        {"ts": "2026-03-01T15:00:00", "open": 0.69, "high": 0.72, "low": 0.61, "close": 0.63, "volume": 3400},
+        {"ts": "2026-03-01T16:00:00", "open": 0.63, "high": 0.69, "low": 0.58, "close": 0.61, "volume": 3600},
+        {"ts": "2026-03-01T17:00:00", "open": 0.61, "high": 0.65, "low": 0.57, "close": 0.60, "volume": 3200},
+        {"ts": "2026-03-01T18:00:00", "open": 0.60, "high": 0.63, "low": 0.55, "close": 0.56, "volume": 3000},
+        {"ts": "2026-03-01T19:00:00", "open": 0.56, "high": 0.62, "low": 0.53, "close": 0.54, "volume": 3800}
+      ]
+    }
+  ]
+}
