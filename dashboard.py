@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import json
 from http.server import BaseHTTPRequestHandler, HTTPServer
+from pathlib import Path
 from typing import Any
 
 from bot import ContractSeries, SignalResult, UnderlyingContext, evaluate_contract, load_input
@@ -159,14 +160,27 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Professional options scanner dashboard")
     parser.add_argument("--input", default="sample_data.json", help="Path to JSON market data")
     parser.add_argument("--timeframe", default="1h", choices=["1h", "15m"])
-    parser.add_argument("--host", default="0.0.0.0")
+    parser.add_argument("--host", default="127.0.0.1")
     parser.add_argument("--port", default=8080, type=int)
     args = parser.parse_args()
 
-    DashboardHandler.data = build_dashboard_data(args.input, args.timeframe)
-    server = HTTPServer((args.host, args.port), DashboardHandler)
+    input_path = Path(args.input)
+    if not input_path.exists():
+        raise SystemExit(f"Input file not found: {input_path}")
 
-    print(f"Dashboard running on http://{args.host}:{args.port}")
+    DashboardHandler.data = build_dashboard_data(str(input_path), args.timeframe)
+
+    try:
+        server = HTTPServer((args.host, args.port), DashboardHandler)
+    except OSError as exc:
+        raise SystemExit(
+            f"Failed to start server on {args.host}:{args.port}. "
+            f"Try another port, e.g. --port 8081. Details: {exc}"
+        ) from exc
+
+    print("Dashboard started successfully")
+    print(f"Open: http://{args.host}:{args.port}")
+    print(f"API : http://{args.host}:{args.port}/api/data")
     server.serve_forever()
 
 
